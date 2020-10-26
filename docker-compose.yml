@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  elastic-search:
+    env_file: 'es-variables.env'
+    ulimits:
+      memlock: -1
+    image: 'docker.elastic.co/elasticsearch/elasticsearch:${ES_IMG_VERSION}'
+    ports:
+      - '9200:9200'
+
+  bulk-inserter:
+    build: './bulk-inserter'
+    depends_on:
+      - 'elastic-search'
+

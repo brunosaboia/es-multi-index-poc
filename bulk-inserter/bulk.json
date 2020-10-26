@@ -1,0 +1,18 @@
+{ "index" : { "_index" : "aliases", "_id" : "1" } }
+{ "iban" : "DK4550515792964689", "alias": "Bruno account" }
+{ "index" : { "_index" : "aliases", "_id" : "2" } }
+{ "iban" : "DK4550515792964688", "alias": "Victor account" }
+{ "index" : { "_index" : "aliases", "_id" : "3" } }
+{ "iban" : "DK4550515792964687", "alias": "Martin account" }
+{ "index" : { "_index" : "transactions", "_id" : "1" } }
+{ "iban_to" : "DK4550515792964688", "iban_from": "DK4550515792964689", "amount": 100 }
+{ "index" : { "_index" : "transactions", "_id" : "2" } }
+{ "iban_to" : "DK4550515792964688", "iban_from": "DK4550515792964689", "amount": 300 }
+{ "index" : { "_index" : "transactions", "_id" : "3" } }
+{ "iban_to" : "DK4550515792964687", "iban_from": "DK4550515792964689", "amount": 150 }
+{ "index" : { "_index" : "transactions", "_id" : "4" } }
+{ "iban_to" : "DK4550515792964688", "iban_from": "DK4550515792964687", "amount": 300 }
+{ "index" : { "_index" : "transactions", "_id" : "5" } }
+{ "iban_to" : "DK4550515792964689", "iban_from": "DK4550515792964688", "amount": 400 }
+{ "index" : { "_index" : "transactions", "_id" : "6" } }
+{ "iban_to" : "DK4550515792964688", "iban_from": "DK4550515792964689", "amount": 100 }
