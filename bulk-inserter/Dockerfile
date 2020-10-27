@@ -1,17 +1,15 @@
-FROM alpine
+FROM curlimages/curl:7.73.0
 
-WORKDIR /usr/bin/app
+WORKDIR /home/curl_user
 
-RUN apk add curl
-
-## Copy wait script
-COPY wait-for-200.sh /usr/bin/wait.sh
-RUN chmod +x /usr/bin/wait.sh
-
+## Copy wait script and bulk data
+COPY wait-for-200.sh wait.sh
 COPY bulk.json bulk.json
 
-## Add bulk.json data to ES
-CMD wait.sh http://elastic-search:9200/_cat/health\?h\=st && \
+RUN chmod +x wait.sh
+
+## Add bulk.json data to ES after the health endpoint returns HTTP 200
+CMD ./wait.sh http://elastic-search:9200/_cat/health\?h\=st && \
     curl -X POST "elastic-search:9200/_bulk?pretty" \
     -H 'Content-Type: application/json' \
     --data-binary @bulk.json
