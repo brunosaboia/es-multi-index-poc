@@ -14,3 +14,10 @@ services:
     depends_on:
       - 'elastic-search'
 
+  kibana:
+    image: 'docker.elastic.co/kibana/kibana:${ES_IMG_VERSION}'
+    environment:
+      ELASTICSEARCH_URL: http://elastic-search:9200
+      ELASTICSEARCH_HOSTS: http://elastic-search:9200
+    ports:
+      - '5601:5601'
