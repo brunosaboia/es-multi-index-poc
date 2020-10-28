@@ -41,7 +41,7 @@ namespace nest_test
             }
             @params.Add("scores", scores);
 
-            var script = @"if(params.scores.containsKey(doc['iban_to.keyword'].value)) { return params.scores[doc['iban_to.keyword'].value]; } return 'zzzzzz';";
+            var script = @"if(params.scores.containsKey(doc['iban_to.keyword'].value)) { return params.scores[doc['iban_to.keyword'].value]; } return ['iban_to.keyword'].toString();";
 
             var sort = new List<ISort>
             {
